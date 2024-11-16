@@ -48,4 +48,30 @@ public class StackTest {
             assertTrue(true);
         }
     }
+
+    @Test
+    public void testStackResize() {
+        for (int i = 0; i < 15; i++) {
+            stack.push("Element " + i);
+        }
+        assertEquals("Element 14", stack.pop());
+        assertEquals("Element 13", stack.pop());
+    }
+
+    @Test
+    public void testPushEmptyString() {
+        stack.push("");
+        assertEquals("", stack.pop());
+    }
+    
+    @Test
+    public void testMixedOperations() {
+        stack.push("A");
+        stack.push("B");
+        assertEquals("B", stack.pop());
+        stack.push("C");
+        assertEquals("C", stack.peek());
+        assertEquals("C", stack.pop());
+        assertEquals("A", stack.pop());
+    }
 }

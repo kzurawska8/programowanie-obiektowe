@@ -26,14 +26,19 @@ public class RPN {
     }
 
     private int applyOperator(int a, int b, String operator) {
-        switch (operator) {
-            case "+": return a + b;
-            case "-": return a - b;
-            case "*": return a * b;
-            case "/": 
-                if (b == 0) throw new ArithmeticException("Division by zero");
-                return a / b;
-            default: throw new IllegalArgumentException("Unknown operator: " + operator);
+        if (operator.equals("+")) {
+            return a + b;
+        } else if (operator.equals("-")) {
+            return a - b;
+        } else if (operator.equals("*")) {
+            return a * b;
+        } else if (operator.equals("/")) {
+            if (b == 0) {
+                throw new ArithmeticException("Dzielenie przez zero");
+            }
+            return a / b;
+        } else {
+            throw new IllegalArgumentException("Nieznany operator: " + operator);
         }
     }
 }

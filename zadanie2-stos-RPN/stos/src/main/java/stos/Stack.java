@@ -31,6 +31,10 @@ public class Stack {
         return elements[size - 1];
     }
 
+    public int size() {
+        return size;
+    }
+
     private void resize() {
         String[] newArray = new String[elements.length * 2];
         for (int i = 0; i < elements.length; i++) {

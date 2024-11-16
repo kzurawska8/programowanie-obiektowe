@@ -1,7 +1,6 @@
 package stos;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -29,24 +28,14 @@ public class StackTest {
         assertEquals("A", stack.pop());
     }
 
-    @Test
+    @Test(expected = IllegalStateException.class)
     public void testPopEmptyStack() {
-        try {
-            stack.pop();
-            assertTrue("Pop from empty stack did not throw exception", false);
-        } catch (IllegalStateException e) {
-            assertTrue(true);
-        }
+        stack.pop();
     }
 
-    @Test
+    @Test(expected = IllegalStateException.class)
     public void testPeekEmptyStack() {
-        try {
-            stack.peek();
-            assertTrue("Peek from empty stack did not throw exception", false);
-        } catch (IllegalStateException e) {
-            assertTrue(true);
-        }
+        stack.peek();
     }
 
     @Test

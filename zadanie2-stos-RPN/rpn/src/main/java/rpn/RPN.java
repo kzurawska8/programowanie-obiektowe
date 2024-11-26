@@ -4,6 +4,10 @@ import stos.Stack;
 
 public class RPN {
     public int evaluate(String expression) {
+        if (expression.trim().isEmpty()) {
+            throw new IllegalArgumentException("Expression cannot be empty");
+        }
+        
         Stack stack = new Stack();
         String[] tokens = expression.split("\\s+");
         

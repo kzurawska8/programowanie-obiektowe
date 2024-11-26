@@ -74,4 +74,9 @@ public class RPNTest {
         assertEquals(-1, calculator.evaluate("4 5 -"));
         assertEquals(1, calculator.evaluate("5 4 -"));
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testEmptyInput() {
+        calculator.evaluate("");
+    }
 }

@@ -76,8 +76,6 @@ public class RegisterTest {
         assertEquals("Kolejność: Physical, Trader, Office", expectedOrder, allEmployees);
     }
 
-
-
     @Test
     public void findEmployeesByCity() {
         Address address = new Address("Main St", 1, 1, "New York");

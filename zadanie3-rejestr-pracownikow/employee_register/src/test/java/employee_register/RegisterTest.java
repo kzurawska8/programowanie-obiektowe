@@ -1,10 +1,10 @@
 package employee_register;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,71 +17,107 @@ public class RegisterTest {
     }
 
     @Test
-    public void testAddEmployee() {
+    public void addEmployee() {
         Address address = new Address("Main St", 1, 1, "New York");
-        Employee emp = new OfficeEmployee("1", "John", "Doe", 30, 5, address, 120);
+        Employee office = new OfficeEmployee("1", "John", "Doe", 30, 5, address, 120);
 
-        register.addEmployee(emp);
+        register.addEmployee(office);
         List<Employee> allEmployees = register.getEmployeesSorted();
-        assertEquals("Register should contain 1 employee after adding.", 1, allEmployees.size());
+        assertEquals("Rejestr zawiera 1 pracownika po dodaniu", 1, allEmployees.size());
     }
 
     @Test
-    public void testRemoveEmployeeById() {
+    public void removeEmployee() {
         Address address = new Address("Main St", 1, 1, "New York");
-        Employee emp = new OfficeEmployee("1", "John", "Doe", 30, 5, address, 120);
+        Employee office = new OfficeEmployee("1", "John", "Doe", 30, 5, address, 120);
 
-        register.addEmployee(emp);
-        boolean removed = register.removeEmployeeById("1");
-        assertTrue("Employee should be removed successfully.", removed);
+        register.addEmployee(office);
+        register.removeEmployee(office.getID());
+        List<Employee> allEmployees = register.getEmployeesSorted();
+        assertEquals("Rejestr nie zawiera żadnych pracowników po usunięciu", 0, allEmployees.size());
     }
 
     @Test
-    public void testRemoveNonExistentEmployee() {
-        boolean removed = register.removeEmployeeById("999");
-        assertFalse("Non-existent employee should not be removable.", removed);
+    public void removeNonExistentEmployee() {
+        boolean removed = register.removeEmployee("999");
+        assertFalse("Nie można usunąć nie istniejącego pracownika", removed);
     }
 
     @Test
-    public void testGetEmployeesByCitySingleMatch() {
+    public void addEmployees() {
+        Address address1 = new Address("Mickiewicza", 10, 1, "Warszawa");
+        Employee office = new OfficeEmployee("1", "Jan", "Kowalski", 30, 5, address1, 120);
+
+        Address address2 = new Address("Słoneczna", 5, 2, "Kraków");
+        Employee physical = new PhysicalEmployee("2", "Anna", "Nowak", 40, 10, address2, 80);
+
+        Address address3 = new Address("Długa", 3, 5, "Gdańsk");
+        Employee trader = new TraderEmployee("3", "Paweł", "Wiśniewski", 35, 7, address3, TraderEmployee.Effectiveness.HIGH, 20);
+
+        register.addEmployees(Arrays.asList(office, physical, trader));
+        List<Employee> allEmployees = register.getEmployeesSorted();
+        assertEquals("Rejestr zawiera 3 pracowników po dodaniu", 3, allEmployees.size());
+    }
+
+    @Test
+    public void sortEmployees() {
+        Address address1 = new Address("Słoneczna", 5, 2, "Kraków");
+        Employee physical = new PhysicalEmployee("1", "Anna", "Nowak", 40, 10, address1, 80);
+
+        Address address2 = new Address("Mickiewicza", 10, 1, "Warszawa");
+        Employee office = new OfficeEmployee("2", "Jan", "Kowalski", 30, 5, address2, 120);
+
+        Address address3 = new Address("Długa", 3, 5, "Gdańsk");
+        Employee trader = new TraderEmployee("3", "Paweł", "Wiśniewski", 35, 7, address3, TraderEmployee.Effectiveness.HIGH, 20);
+
+        register.addEmployees(Arrays.asList(physical, office, trader));
+        List<Employee> allEmployees = register.getEmployeesSorted();
+        List<Employee> expectedOrder = Arrays.asList(physical, trader, office);
+        assertEquals("Kolejność: Physical, Trader, Office", expectedOrder, allEmployees);
+    }
+
+
+
+    @Test
+    public void findEmployeesByCity() {
         Address address = new Address("Main St", 1, 1, "New York");
-        Employee emp = new OfficeEmployee("1", "John", "Doe", 30, 5, address, 120);
+        Employee office = new OfficeEmployee("1", "John", "Doe", 30, 5, address, 120);
 
-        register.addEmployee(emp);
+        register.addEmployee(office);
         List<Employee> employeesInNY = register.getEmployeesByCity("New York");
-        assertEquals("Should find 1 employee in New York.", 1, employeesInNY.size());
+        assertEquals("Znaleziony 1 pracownik w New York", 1, employeesInNY.size());
     }
 
     @Test
-    public void testGetEmployeesByCityNoMatch() {
+    public void findEmployeesByCityNoMatch() {
         List<Employee> employeesInChicago = register.getEmployeesByCity("Chicago");
-        assertEquals("Should find no employees in Chicago.", 0, employeesInChicago.size());
+        assertEquals("Nie ma pracowników w Chicago", 0, employeesInChicago.size());
     }
 
     @Test
-    public void testEmployeeValueCalculationOfficeEmployee() {
+    public void calculationOfficeEmployee() {
         Address address = new Address("Main St", 1, 1, "New York");
-        Employee emp = new OfficeEmployee("1", "John", "Doe", 30, 5, address, 120);
+        Employee office = new OfficeEmployee("1", "John", "Doe", 30, 5, address, 120);
 
-        double value = emp.calculateValue();
-        assertEquals("Value should be correctly calculated for OfficeEmployee.", 600.0, value, 0.001);
+        double value = office.calculateValue();
+        assertEquals("5 * 120 = 600", 600.0, value, 0.001);
     }
 
     @Test
-    public void testEmployeeValueCalculationPhysicalEmployee() {
+    public void calculationPhysicalEmployee() {
         Address address = new Address("Park Ave", 5, 10, "Los Angeles");
-        Employee emp = new PhysicalEmployee("2", "Jane", "Smith", 25, 3, address, 80);
+        Employee physical = new PhysicalEmployee("2", "Jane", "Smith", 25, 3, address, 80);
 
-        double value = emp.calculateValue();
-        assertEquals("Value should be correctly calculated for PhysicalEmployee.", 9.6, value, 0.001);
+        double value = physical.calculateValue();
+        assertEquals("3 * 80 / 25 = 9.6", 9.6, value, 0.001);
     }
 
     @Test
-    public void testEmployeeValueCalculationTraderHighEffectiveness() {
+    public void calculationTraderHighEffectiveness() {
         Address address = new Address("Main St", 1, 1, "New York");
-        Employee emp = new TraderEmployee("3", "Alice", "Brown", 35, 10, address, TraderEmployee.Effectiveness.HIGH, 10.0);
+        Employee trader = new TraderEmployee("3", "Alice", "Brown", 35, 10, address, TraderEmployee.Effectiveness.HIGH, 10.0);
 
-        double value = emp.calculateValue();
-        assertEquals("Value should be correctly calculated for Trader with HIGH effectiveness.", 1200.0, value, 0.001);
+        double value = trader.calculateValue();
+        assertEquals("10 * 120 = 1200", 1200.0, value, 0.001);
     }
 }

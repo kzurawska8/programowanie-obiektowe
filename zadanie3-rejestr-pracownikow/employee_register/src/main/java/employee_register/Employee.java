@@ -17,20 +17,24 @@ public abstract class Employee {
         this.address = address;
     }
 
-    public String getId() {
+    public String getID() {
         return id;
     }
 
-    public int getExperience() {
-        return experience;
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public int getAge() {
         return age;
     }
 
-    public String getLastName() {
-        return lastName;
+    public int getExperience() {
+        return experience;
     }
 
     public Address getAddress() {
@@ -38,10 +42,10 @@ public abstract class Employee {
     }
 
     public abstract double calculateValue();
-
+     
     @Override
     public String toString() {
-        return String.format("ID: %s, %s %s, Age: %d, Experience: %d, Address: %s", 
+        return String.format("ID: %s, %s %s, Wiek: %d, Doświadczenie: %d, Adres: %s", 
             id, firstName, lastName, age, experience, address);
     }
 }

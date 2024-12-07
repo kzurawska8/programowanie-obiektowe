@@ -31,6 +31,6 @@ public class TraderEmployee extends Employee {
 
     @Override
     public String toString() {
-        return super.toString() + ", Effectiveness: " + effectiveness + ", Commission: " + commission + "%";
+        return super.toString() + ", Efektywność: " + effectiveness + ", Skuteczność: " + commission + "%";
     }
 }

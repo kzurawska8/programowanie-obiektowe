@@ -15,6 +15,6 @@ public class PhysicalEmployee extends Employee {
 
     @Override
     public String toString() {
-        return super.toString() + ", Strength: " + strength;
+        return super.toString() + ", Siła: " + strength;
     }
 }

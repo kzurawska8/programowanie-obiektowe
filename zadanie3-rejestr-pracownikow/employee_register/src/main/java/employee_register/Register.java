@@ -16,8 +16,8 @@ public class Register {
         employees.addAll(employeesToAdd);
     }
 
-    public boolean removeEmployeeById(String id) {
-        return employees.removeIf(employee -> employee.getId().equals(id));
+    public boolean removeEmployee(String id) {
+        return employees.removeIf(employee -> employee.getID().equals(id));
     }
 
     public List<Employee> getEmployeesSorted() {
@@ -36,6 +36,6 @@ public class Register {
 
     public void printEmployeesWithValue() {
         employees.forEach(employee -> 
-            System.out.printf("%s, Value: %.2f%n", employee, employee.calculateValue()));
+            System.out.printf("%s, Wartość: %.2f%n", employee, employee.calculateValue()));
     }
 }

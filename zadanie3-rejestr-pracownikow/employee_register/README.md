@@ -92,4 +92,4 @@ W zadaniu oceniane będą:
 - Polimorfizm: 10%
 
 ### Uwaga
-Projekt powinien również zawierać odpowiednie testy jednostkowe do implementowanej funkcjonalności.
+Projekt powinien również zawierać odpowiednie testy jednostkowe do implementowanej funkcjonalności..

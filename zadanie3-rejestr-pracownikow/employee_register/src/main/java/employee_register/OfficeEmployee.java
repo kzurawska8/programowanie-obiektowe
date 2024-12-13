@@ -5,6 +5,7 @@ public class OfficeEmployee extends Employee {
 
     public OfficeEmployee(String id, String firstName, String lastName, int age, int experience, Address address, int iq) {
         super(id, firstName, lastName, age, experience, address);
+        if (iq <= 0) throw new IllegalArgumentException("IQ musi być większe od 0");
         this.iq = iq;
     }
 

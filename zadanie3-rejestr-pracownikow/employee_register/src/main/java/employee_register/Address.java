@@ -7,6 +7,9 @@ public class Address {
     private String city;
 
     public Address(String street, int buildingNumber, int apartmentNumber, String city) {
+        if (street == null || street.trim().isEmpty()) throw new IllegalArgumentException("Ulica nie może być pusta lub NULL");
+        if (city == null || city.trim().isEmpty()) throw new IllegalArgumentException("Miasto nie może być puste lub NULL");
+        
         this.street = street;
         this.buildingNumber = buildingNumber;
         this.apartmentNumber = apartmentNumber;

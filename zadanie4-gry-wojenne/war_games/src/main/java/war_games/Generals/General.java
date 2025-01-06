@@ -1,5 +1,7 @@
 package war_games.Generals;
 
+import java.util.List;
+
 import war_games.Utils.InputValidator;
 
 public class General {
@@ -28,6 +30,19 @@ public class General {
 
     public Army getArmy() {
         return army;
+    }
+
+    public boolean performManeuvers(List<Soldier> soldiers) {
+    int totalCost = soldiers.stream().mapToInt(s -> s.getRank().getValue()).sum();
+    if (gold >= totalCost) {
+        soldiers.forEach(Soldier::gainExperience);
+        gold -= totalCost;
+        return true;
+    } 
+    else {
+        System.out.println("Not enough gold for maneuvers.");
+        return false;
+    }
     }
 
     @Override

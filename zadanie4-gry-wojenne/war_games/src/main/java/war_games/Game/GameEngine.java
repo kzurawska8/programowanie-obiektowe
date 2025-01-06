@@ -2,6 +2,7 @@ package war_games.Game;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 import war_games.Generals.General;
@@ -9,12 +10,17 @@ import war_games.Generals.Soldier;
 import war_games.Generals.SoldierRank;
 
 public class GameEngine implements GameActions {
-    private final GameState gameState;
+    private GameState gameState;
     private final Scanner scanner;
 
     public GameEngine() {
-        this.gameState = GameState.loadLastState();
+        this.gameState = new GameState(new ArrayList<>());
         this.scanner = new Scanner(System.in);
+    }
+
+    private void logGameState() {
+        String report = ReportGenerator.generateOverallReport(gameState);
+        Logger.log(report, true);
     }
 
     @Override
@@ -26,27 +32,33 @@ public class GameEngine implements GameActions {
             switch (choice) {
                 case 1 -> attack();
                 case 2 -> recruitSoldiers();
-                case 3 -> saveGame();
-                case 4 -> loadGame();
-                case 5 -> showStatus();
-                case 6 -> {
+                case 3 -> performManeuvers();
+                case 4 -> saveGame();
+                case 5 -> loadGame();
+                case 6 -> showStatus();
+                case 7 -> {
                     System.out.println("Exiting game...");
                     return;
                 }
                 default -> System.out.println("Invalid choice. Try again.");
             }
+            logGameState();
             autoSave();
         }
     }
 
     private void displayMenu() {
+        System.out.println("===================================");
         System.out.println("1. Attack");
         System.out.println("2. Recruit Soldiers");
-        System.out.println("3. Save Game");
-        System.out.println("4. Load Game");
-        System.out.println("5. Show Status");
-        System.out.println("6. Exit");
-    }
+        System.out.println("3. Perform Maneuvers");
+        System.out.println("4. Save Game");
+        System.out.println("5. Load Game");
+        System.out.println("6. Show Status");
+        System.out.println("7. Exit");
+        System.out.println("===================================");
+        System.out.print("Choose an action: ");
+    }    
 
     private int getValidatedChoice() {
         int choice = -1;
@@ -54,7 +66,8 @@ public class GameEngine implements GameActions {
             try {
                 System.out.print("Enter your choice: ");
                 choice = Integer.parseInt(scanner.nextLine());
-            } catch (NumberFormatException e) {
+            } 
+            catch (NumberFormatException e) {
                 System.out.println("Invalid input. Please enter a number between 1 and 6.");
             }
         }
@@ -62,27 +75,75 @@ public class GameEngine implements GameActions {
     }
 
     @Override
+    public void performManeuvers() {
+        General currentGeneral = gameState.getGenerals().get(0);
+        System.out.println("Performing maneuvers for " + currentGeneral.getName());
+        boolean success = currentGeneral.performManeuvers(currentGeneral.getArmy().getSoldiers());
+        if (success) {
+            System.out.println("Maneuvers completed successfully.");
+        } 
+        else {
+            System.out.println("Maneuvers failed. Not enough gold.");
+        }
+    }     
+
+    @Override
     public void attack() {
-        System.out.println("Attacking...");
+        General general1 = gameState.getGenerals().get(0);
+        General general2 = gameState.getGenerals().get(1);
+    
+        int strength1 = general1.getArmy().calculateTotalStrength();
+        int strength2 = general2.getArmy().calculateTotalStrength();
+    
+        if (strength1 > strength2) {
+            processBattleOutcome(general1, general2);
+        } 
+        else if (strength1 < strength2) {
+            processBattleOutcome(general2, general1);
+        } 
+        else {
+            processTie(general1, general2);
+        }
+    }
+    
+    private void processBattleOutcome(General winner, General loser) {
+        int goldTransfer = loser.getGold() / 10;
+        winner.setGold(winner.getGold() + goldTransfer);
+        loser.setGold(loser.getGold() - goldTransfer);
+    
+        winner.getArmy().getSoldiers().forEach(Soldier::gainExperience);
+        loser.getArmy().getSoldiers().forEach(Soldier::loseExperience);
+    
+        loser.getArmy().removeDeadSoldiers();
+    
+        System.out.println(winner.getName() + " wins the battle!");
+    }
+    
+    private void processTie(General general1, General general2) {
+        System.out.println("It's a tie! Both generals lose one soldier.");
+        removeRandomSoldier(general1);
+        removeRandomSoldier(general2);
+    }    
+
+    private void removeRandomSoldier(General general) {
+        List<Soldier> soldiers = general.getArmy().getSoldiers();
+        if (!soldiers.isEmpty()) {
+            Random random = new Random();
+            int randomIndex = random.nextInt(soldiers.size());
+            soldiers.remove(randomIndex);
+        }
     }
 
     @Override
     public void recruitSoldiers() {
-        List<General> generals;
-        try {
-            generals = gameState.getGenerals();
-        } catch (ClassCastException e) {
-            System.out.println("Error: Invalid generals list format.");
-            generals = new ArrayList<>();
-        }
-        if (generals.isEmpty()) {
-            System.out.println("No generals available.");
+        General general = gameState.getGenerals().get(0);
+        System.out.println("Choose rank of soldier to recruit: 1.PRIVATE, 2.CORPORAL, 3.CAPTAIN, 4.MAJOR");
+        int choice = getValidatedChoice();
+        if (choice < 1 || choice > 4) {
+            System.out.println("Invalid rank choice. Please choose a rank between 1 and 4.");
             return;
         }
 
-        General general = generals.get(0);
-        System.out.println("Choose rank of soldier to recruit: 1.PRIVATE, 2.CORPORAL, 3.CAPTAIN, 4.MAJOR");
-        int choice = getValidatedChoice();
         SoldierRank rank = switch (choice) {
             case 1 -> SoldierRank.PRIVATE;
             case 2 -> SoldierRank.CORPORAL;
@@ -90,12 +151,14 @@ public class GameEngine implements GameActions {
             case 4 -> SoldierRank.MAJOR;
             default -> throw new IllegalArgumentException("Invalid choice.");
         };
+
         int cost = 10 * rank.getValue();
         if (general.getGold() >= cost) {
             general.getArmy().addSoldier(new Soldier(rank));
             general.setGold(general.getGold() - cost);
             System.out.println("Soldier recruited!");
-        } else {
+        } 
+        else {
             System.out.println("Not enough gold.");
         }
     }
@@ -109,7 +172,7 @@ public class GameEngine implements GameActions {
     @Override
     public void loadGame() {
         System.out.println("Loading game...");
-        gameState.load("game_state.dat");
+        this.gameState = new GameState(new ArrayList<>()).load("game_state.dat");
     }
 
     @Override

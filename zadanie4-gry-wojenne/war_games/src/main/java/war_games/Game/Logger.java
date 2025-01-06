@@ -13,7 +13,8 @@ public class Logger {
     public static void log(String message, boolean printToConsole) {
         try (FileWriter writer = new FileWriter(LOG_FILE, true)) {
             writer.write(message + "\n");
-        } catch (IOException e) {
+        } 
+        catch (IOException e) {
             System.out.println("Error writing to log file: " + e.getMessage());
         }
         if (printToConsole) {

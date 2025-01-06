@@ -18,7 +18,7 @@ public class GameEngine implements GameActions {
         this.scanner = new Scanner(System.in);
     }
 
-    private void logGameState() {
+    public void logGameState() {
         String report = ReportGenerator.generateOverallReport(gameState);
         Logger.log(report, true);
     }
@@ -60,7 +60,7 @@ public class GameEngine implements GameActions {
         System.out.print("Choose an action: ");
     }    
 
-    private int getValidatedChoice() {
+    public int getValidatedChoice() {
         int choice = -1;
         while (choice < 1 || choice > 6) {
             try {
@@ -106,7 +106,7 @@ public class GameEngine implements GameActions {
         }
     }
     
-    private void processBattleOutcome(General winner, General loser) {
+    public void processBattleOutcome(General winner, General loser) {
         int goldTransfer = loser.getGold() / 10;
         winner.setGold(winner.getGold() + goldTransfer);
         loser.setGold(loser.getGold() - goldTransfer);
@@ -119,13 +119,13 @@ public class GameEngine implements GameActions {
         System.out.println(winner.getName() + " wins the battle!");
     }
     
-    private void processTie(General general1, General general2) {
+    public void processTie(General general1, General general2) {
         System.out.println("It's a tie! Both generals lose one soldier.");
         removeRandomSoldier(general1);
         removeRandomSoldier(general2);
     }    
 
-    private void removeRandomSoldier(General general) {
+    public void removeRandomSoldier(General general) {
         List<Soldier> soldiers = general.getArmy().getSoldiers();
         if (!soldiers.isEmpty()) {
             Random random = new Random();
@@ -181,7 +181,7 @@ public class GameEngine implements GameActions {
         System.out.println(gameState);
     }
 
-    private void autoSave() {
+    public void autoSave() {
         saveGame();
     }
 }

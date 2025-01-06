@@ -46,7 +46,7 @@ public class GameState implements Serializable, Data {
         }
     }
 
-    private void validateGameState(GameState gameState) {
+    public void validateGameState(GameState gameState) {
         if (gameState.getGenerals().size() != 2) {
             throw new IllegalArgumentException("Invalid number of generals. Exactly 2 generals are required.");
         }

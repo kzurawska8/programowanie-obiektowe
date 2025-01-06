@@ -1,0 +1,394 @@
+-------------------------------------------------------------------------------
+Test set: war_games.GameEngineTest
+-------------------------------------------------------------------------------
+Tests run: 30, Failures: 0, Errors: 30, Skipped: 0, Time elapsed: 0.073 s <<< FAILURE! -- in war_games.GameEngineTest
+war_games.GameEngineTest.testAutoSave -- Time elapsed: 0.013 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testGainExperience -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testPerformManeuvers -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testRemoveRandomSoldier -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testSaveGame -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testGetStrength -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testGameStateInitialization -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testRemoveDeadSoldiers -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testAddSoldier -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testCalculateTotalStrength -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testPromote -- Time elapsed: 0 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testProcessTie -- Time elapsed: 0 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testLoggerLogWithConsoleOutput -- Time elapsed: 0 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testShowStatus -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testRecruitSoldiers_EnoughGold -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testLogGameState -- Time elapsed: 0 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testSaveMethod -- Time elapsed: 0 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testProcessBattleOutcome -- Time elapsed: 0 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testLoseExperience -- Time elapsed: 0 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testInvalidChoice -- Time elapsed: 0 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testGameStateLoad -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testLoadLastState -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testValidatePositiveNumber -- Time elapsed: 0 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testGenerateOverallReport -- Time elapsed: 0 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testGenerateReport -- Time elapsed: 0 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testRecruitSoldiers_NotEnoughGold -- Time elapsed: 0 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testLoggerLogMessage -- Time elapsed: 0 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testAttack -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testValidateGameState -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+war_games.GameEngineTest.testPerformManeuversWithSoldiers -- Time elapsed: 0 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Cannot make a static reference to the non-static method load(String) from the type GameState
+	Cannot make a static reference to the non-static method validateGameState(GameState) from the type GameState
+
+	at war_games.GameEngineTest.<init>(GameEngineTest.java:119)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

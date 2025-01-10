@@ -24,6 +24,13 @@ public class Soldier {
         return rank.getValue() * experience;
     }
 
+    public void setExperience(int experience) {
+        if (experience < 0) {
+            throw new IllegalArgumentException("Experience cannot be negative.");
+        }
+        this.experience = experience;
+    }    
+
     public void gainExperience() {
         experience++;
         validateState();
@@ -33,7 +40,9 @@ public class Soldier {
     }
 
     public void loseExperience() {
-        experience--;
+        if (this.experience > 0) {
+            this.experience--;
+        }
         validateState();
     }
 

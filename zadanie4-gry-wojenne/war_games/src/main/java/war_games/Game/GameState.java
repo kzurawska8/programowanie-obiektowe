@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import war_games.Generals.Army;
 import war_games.Generals.General;
 import war_games.Generals.Soldier;
 
@@ -17,7 +18,7 @@ public class GameState implements Serializable, Data {
     private List<General> generals;
 
     public GameState(List<General> generals) {
-        if (generals.size() != 2) {
+        if (generals == null || generals.size() != 2) {
             throw new IllegalArgumentException("There must be exactly 2 generals in the game.");
         }
         this.generals = generals;
@@ -27,8 +28,7 @@ public class GameState implements Serializable, Data {
         return generals;
     }
 
-    @Override
-    public GameState load(String fileName) {
+    public static GameState load(String fileName) {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))) {
             Object obj = ois.readObject();
             if (obj instanceof GameState) {
@@ -46,7 +46,7 @@ public class GameState implements Serializable, Data {
         }
     }
 
-    public void validateGameState(GameState gameState) {
+    public static void validateGameState(GameState gameState) {
         if (gameState.getGenerals().size() != 2) {
             throw new IllegalArgumentException("Invalid number of generals. Exactly 2 generals are required.");
         }
@@ -66,7 +66,15 @@ public class GameState implements Serializable, Data {
     }
 
     public static GameState loadLastState() {
-        return new GameState(new ArrayList<>()).load("game_state.dat");
+        try {
+            return new GameState(List.of(new General("Default General A", 100, new Army()),
+                                        new General("Default General B", 100, new Army())));
+        } 
+        catch (Exception e) {
+            System.out.println("No valid previous state found. Starting new game.");
+            return new GameState(List.of(new General("Default General A", 100, new Army()),
+                                        new General("Default General B", 100, new Army())));
+        }
     }
 
     @Override

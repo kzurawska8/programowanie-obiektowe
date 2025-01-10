@@ -13,10 +13,10 @@ public class GameEngine implements GameActions {
     private GameState gameState;
     private final Scanner scanner;
 
-    public GameEngine() {
-        this.gameState = new GameState(new ArrayList<>());
+    public GameEngine(GameState gameState) {
+        this.gameState = gameState != null ? gameState : GameState.loadLastState();
         this.scanner = new Scanner(System.in);
-    }
+    }    
 
     public void logGameState() {
         String report = ReportGenerator.generateOverallReport(gameState);
@@ -61,15 +61,9 @@ public class GameEngine implements GameActions {
     }    
 
     public int getValidatedChoice() {
-        int choice = -1;
-        while (choice < 1 || choice > 6) {
-            try {
-                System.out.print("Enter your choice: ");
-                choice = Integer.parseInt(scanner.nextLine());
-            } 
-            catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a number between 1 and 6.");
-            }
+        int choice = scanner.nextInt();
+        if (choice < 1 || choice > 6) {
+            throw new IllegalArgumentException("Invalid choice.");
         }
         return choice;
     }
@@ -134,9 +128,21 @@ public class GameEngine implements GameActions {
         }
     }
 
+    public void recruitSoldiers(SoldierRank rank) {
+        General general = gameState.getGenerals().get(0);
+
+        int cost = 10 * rank.getValue();
+        if (general.getGold() >= cost) {
+            general.getArmy().addSoldier(new Soldier(rank));
+            general.setGold(general.getGold() - cost);
+            System.out.println("Soldier recruited!");
+        } else {
+            System.out.println("Not enough gold.");
+        }
+    }
+
     @Override
     public void recruitSoldiers() {
-        General general = gameState.getGenerals().get(0);
         System.out.println("Choose rank of soldier to recruit: 1.PRIVATE, 2.CORPORAL, 3.CAPTAIN, 4.MAJOR");
         int choice = getValidatedChoice();
         if (choice < 1 || choice > 4) {
@@ -152,15 +158,7 @@ public class GameEngine implements GameActions {
             default -> throw new IllegalArgumentException("Invalid choice.");
         };
 
-        int cost = 10 * rank.getValue();
-        if (general.getGold() >= cost) {
-            general.getArmy().addSoldier(new Soldier(rank));
-            general.setGold(general.getGold() - cost);
-            System.out.println("Soldier recruited!");
-        } 
-        else {
-            System.out.println("Not enough gold.");
-        }
+        recruitSoldiers(rank);
     }
 
     @Override
